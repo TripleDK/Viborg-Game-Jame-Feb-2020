@@ -6,30 +6,30 @@ public class SkyLightBehavior : MonoBehaviour
 {
 
     [SerializeField]
-    Collider2D lightToActivate;
+    GameObject lightToActivate;
 
     private int obstaclesOnTop = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name + " entered!");
         obstaclesOnTop++;
-        lightToActivate.enabled = false;
+        lightToActivate.SetActive(false);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name + " exited!");
         obstaclesOnTop--;
-        if(obstaclesOnTop == 0)
+        if (obstaclesOnTop == 0)
         {
-            lightToActivate.enabled = true;
+            lightToActivate.SetActive(true);
         }
     }
 

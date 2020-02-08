@@ -37,12 +37,14 @@ public class WerewolfStateController : MonoBehaviour
     private bool touchingShadow = false;
     private bool touchingLight = false;
     private bool moonlight = false;
-   
 
+    private void Awake()
+    {
+
+        playerController = GetComponent<PlatformerCharacter2D>();
+    }
     void Start()
     {
-        playerController = GetComponent<PlatformerCharacter2D>();
-       
         if (wolfForm) TransformToWolf();
         else TransformToHuman();
     }
