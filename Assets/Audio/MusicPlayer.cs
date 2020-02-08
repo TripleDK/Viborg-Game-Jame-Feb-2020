@@ -17,6 +17,8 @@ public class MusicPlayer : MonoBehaviour
 
     public AudioMixerSnapshot werewolf;
     public AudioMixerSnapshot human;
+    public AudioMixerSnapshot SfxStarting;
+    public AudioMixerSnapshot SfxRunning;
 
     public AudioClip transitionToHuman;
     public AudioClip transitionToWolf;
@@ -28,6 +30,8 @@ public class MusicPlayer : MonoBehaviour
 
         if (musicIsPlaying == false)
         {
+            SfxStarting.TransitionTo(0f);
+            SfxRunning.TransitionTo(1f);
             GameObject.Find("Layer1").GetComponent<AudioSource>().Play(); // plays always
             GameObject.Find("Layer2").GetComponent<AudioSource>().Play(); // plays when wolf
             GameObject.Find("Layer3").GetComponent<AudioSource>().Play(); // plays when human
