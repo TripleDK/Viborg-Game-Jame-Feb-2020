@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KeyBehavior : MonoBehaviour
 {
+    AudioSource audioSource;
     [SerializeField]
     float floatRange = 1;
     [SerializeField]
@@ -13,6 +14,7 @@ public class KeyBehavior : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         startY = transform.position.y;
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -20,7 +22,7 @@ public class KeyBehavior : MonoBehaviour
         Debug.Log("Who dares pick up key? " + collision.gameObject.name + " tagged " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
         {
-            ///ESBEN: HER SAMLER VI NØGLEN OP
+            audioSource.Play();
             GameObject.FindGameObjectWithTag("LevelExit").GetComponent<ExitBehavior>().Unlock();
             Destroy(gameObject);
         }
