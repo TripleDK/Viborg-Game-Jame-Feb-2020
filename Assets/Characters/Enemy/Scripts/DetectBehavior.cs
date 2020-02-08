@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DetectBehavior : MonoBehaviour
 {
-
     [SerializeField]
     float detectRange;
 
@@ -14,17 +13,46 @@ public class DetectBehavior : MonoBehaviour
     private EnemyStateController stateController;
     private bool seeingEnemy = false;
 
+    AudioSource audioSource;
+    private int selectedFile;
+
+    [System.Serializable]
+    public class Sound
+    {
+        public AudioClip soundFile;
+        public float volume;
+    }
+    public Sound[] italianGuy;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         stateController = transform.parent.GetComponent<EnemyStateController>();
         detectCollider = GetComponent<Collider2D>();
         enemyCollider = transform.parent.GetComponent<Collider2D>();
         Physics2D.IgnoreCollision(detectCollider, enemyCollider);
     }
 
+    public void ItalianSpeaks()
+    {
+        TriggerSoundEvent(italianGuy);
+        Debug.Log("hey tony");
+    }
+
+    private void TriggerSoundEvent(Sound[] sound)
+    {
+        selectedFile = Random.Range(0, sound.Length);
+        audioSource.clip = sound[selectedFile].soundFile;
+        audioSource.Play();
+    }
+
     void SpottedEnemy()
     {
-        //Hey, Tony!
+        if (seeingEnemy == false)
+        {
+            seeingEnemy = true;
+            ItalianSpeaks();
+        }
     }
 
     void OnTriggerStay2D(Collider2D collider)
@@ -35,7 +63,7 @@ public class DetectBehavior : MonoBehaviour
             Debug.Log("Detection hits " + collider.gameObject.name);
             if (collider.gameObject.tag == "Player")
             {
-
+                
                 WerewolfStateController wolfController = collider.gameObject.GetComponent<WerewolfStateController>();
                 if (wolfController.wolfForm)
                 {
@@ -43,14 +71,12 @@ public class DetectBehavior : MonoBehaviour
                     stateController.detectedPlayer = collider.gameObject;
 
                     stateController.GoToAttackState();
+
+                    SpottedEnemy();
                 }
                 else
                 {
-                    if (seeingEnemy == false)
-                    {
-                        seeingEnemy = true;
-                        SpottedEnemy();
-                    }
+                    SpottedEnemy();
                 }
             }
             else
