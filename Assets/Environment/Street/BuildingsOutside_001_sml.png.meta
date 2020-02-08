@@ -1,0 +1,499 @@
+fileFormatVersion: 2
+guid: 7a1916e145c5e6040b295354fbb61830
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7727211346691386335
+    second: BuildingsOutside_001_sml_0
+  - first:
+      213: 5572237090945322959
+    second: BuildingsOutside_001_sml_1
+  - first:
+      213: 7236717582344464880
+    second: BuildingsOutside_001_sml_2
+  - first:
+      213: 2014192548491652422
+    second: BuildingsOutside_001_sml_3
+  - first:
+      213: 6919487734176425361
+    second: BuildingsOutside_001_sml_4
+  - first:
+      213: 1924788013474448295
+    second: BuildingsOutside_001_sml_5
+  - first:
+      213: 6078483769851276611
+    second: BuildingsOutside_001_sml_6
+  - first:
+      213: 419008428131101006
+    second: BuildingsOutside_001_sml_7
+  - first:
+      213: -3822644301176886962
+    second: BuildingsOutside_001_sml_8
+  - first:
+      213: 958365883032289233
+    second: BuildingsOutside_001_sml_9
+  - first:
+      213: 6388785421022974118
+    second: BuildingsOutside_001_sml_10
+  - first:
+      213: -1515464527252506734
+    second: BuildingsOutside_001_sml_11
+  - first:
+      213: 7184892766721285123
+    second: BuildingsOutside_001_sml_12
+  - first:
+      213: 7391227441635759792
+    second: BuildingsOutside_001_sml_13
+  - first:
+      213: -3466750155605800330
+    second: BuildingsOutside_001_sml_14
+  - first:
+      213: 3304167358766925245
+    second: BuildingsOutside_001_sml_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_0
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 120
+        width: 958
+        height: 1941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1249710883e63c490800000000000000
+      internalID: -7727211346691386335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_1
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 145
+        width: 763
+        height: 1916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf4d0a7c10945d40800000000000000
+      internalID: 5572237090945322959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_2
+      rect:
+        serializedVersion: 2
+        x: 2741
+        y: 1881
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f92773ac4cfd6460800000000000000
+      internalID: 7236717582344464880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_3
+      rect:
+        serializedVersion: 2
+        x: 2749
+        y: 145
+        width: 139
+        height: 1916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d65128379d3fb10800000000000000
+      internalID: 2014192548491652422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_4
+      rect:
+        serializedVersion: 2
+        x: 2981
+        y: 1583
+        width: 762
+        height: 554
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1952247ee65f60060800000000000000
+      internalID: 6919487734176425361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_5
+      rect:
+        serializedVersion: 2
+        x: 3788
+        y: 1583
+        width: 147
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a30313108836ba10800000000000000
+      internalID: 1924788013474448295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_6
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1522
+        width: 170
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d66f298cc1b5450800000000000000
+      internalID: 6078483769851276611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_7
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1814
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4926a402fd90d500800000000000000
+      internalID: 419008428131101006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_8
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1522
+        width: 195
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e492ea5e24d33fac0800000000000000
+      internalID: -3822644301176886962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_9
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 884
+        width: 475
+        height: 497
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df3ef661bccc4d00800000000000000
+      internalID: 958365883032289233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_10
+      rect:
+        serializedVersion: 2
+        x: 2981
+        y: 770
+        width: 762
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a0d44ebd7689a850800000000000000
+      internalID: 6388785421022974118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_11
+      rect:
+        serializedVersion: 2
+        x: 3796
+        y: 770
+        width: 121
+        height: 742
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297b86faa0df7fae0800000000000000
+      internalID: -1515464527252506734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_12
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 147
+        width: 239
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c12b577edd5b360800000000000000
+      internalID: 7184892766721285123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_13
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 118
+        width: 145
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b691d0a23ae29660800000000000000
+      internalID: 7391227441635759792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_14
+      rect:
+        serializedVersion: 2
+        x: 2981
+        y: 81
+        width: 762
+        height: 631
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a0612e911a3efc0800000000000000
+      internalID: -3466750155605800330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOutside_001_sml_15
+      rect:
+        serializedVersion: 2
+        x: 3796
+        y: 81
+        width: 129
+        height: 631
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db54eb1e4b2cadd20800000000000000
+      internalID: 3304167358766925245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
