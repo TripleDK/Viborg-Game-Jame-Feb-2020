@@ -40,8 +40,8 @@ public class EnemyAttackState : EnemyState
     {
         Debug.Log("Firing!");
         GameObject firedBullet = GameObject.Instantiate(bullet, enemy.transform.position, Quaternion.identity);
-        firedBullet.transform.LookAt(player.transform.position - enemy.transform.position);
-        firedBullet.transform.Rotate(-90, 0, 0);
-        firedBullet.transform.eulerAngles = new Vector3(0, 0, firedBullet.transform.eulerAngles.z);
+        
+        firedBullet.transform.up = player.transform.position - enemy.transform.position;
+        firedBullet.transform.eulerAngles = new Vector3(firedBullet.transform.eulerAngles.x, 0, firedBullet.transform.eulerAngles.z);
     }
 }

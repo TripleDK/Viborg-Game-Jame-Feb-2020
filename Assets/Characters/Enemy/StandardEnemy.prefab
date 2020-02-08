@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1105731710938255383}
   m_Layer: 0
   m_Name: StandardEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,11 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7397707795980746903, guid: 35f56c1f21a14ad44871b8f674d9e4b7, type: 3}
-  currentState: {fileID: 0}
-  patrolBehavior: {fileID: 0}
-  attackBehavior: {fileID: 0}
-  chaseBehavior: {fileID: 0}
   detectedPlayer: {fileID: 0}
+  timeBetweenPatrolTurn: 5
+  reactionTime: 1
+  timeBetweenAttacks: 3
 --- !u!61 &1105731710938255383
 BoxCollider2D:
   m_ObjectHideFlags: 0

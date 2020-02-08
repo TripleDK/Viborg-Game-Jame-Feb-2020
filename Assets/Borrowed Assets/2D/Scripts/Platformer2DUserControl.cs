@@ -11,6 +11,7 @@ namespace UnityStandardAssets._2D
         private bool m_Jump;
 
 
+
         private void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
@@ -23,6 +24,7 @@ namespace UnityStandardAssets._2D
             {
                 // Read the jump input in Update so button presses aren't missed.
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+
             }
         }
 
@@ -35,6 +37,9 @@ namespace UnityStandardAssets._2D
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump);
             m_Jump = false;
+            bool attack = Input.GetKeyDown(KeyCode.Space);
+            if (attack)
+                m_Character.Attack();
         }
     }
 }

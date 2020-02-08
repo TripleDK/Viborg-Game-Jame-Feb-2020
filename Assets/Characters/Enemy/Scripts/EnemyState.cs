@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class EnemyState : ScriptableObject
+public abstract class EnemyState
 {
     public abstract void StateEnter();
     public abstract void StateExecute();

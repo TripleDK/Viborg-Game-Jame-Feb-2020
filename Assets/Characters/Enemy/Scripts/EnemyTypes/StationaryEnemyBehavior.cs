@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StationaryEnemyBehavior : EnemyStateController
 {
+
     void Awake()
     {
         patrolBehavior = new EnemyStationaryPatrolState(gameObject);

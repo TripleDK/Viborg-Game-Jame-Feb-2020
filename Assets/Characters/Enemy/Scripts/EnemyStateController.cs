@@ -21,6 +21,8 @@ public class EnemyStateController : MonoBehaviour
     public float reactionTime = 1;
     public float timeBetweenAttacks = 3;
 
+
+
     public void ChangeState(EnemyState newState)
     {
         if (currentState != null)
@@ -37,6 +39,11 @@ public class EnemyStateController : MonoBehaviour
             currentState = attackBehavior;
             currentState.StateEnter();
         }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update

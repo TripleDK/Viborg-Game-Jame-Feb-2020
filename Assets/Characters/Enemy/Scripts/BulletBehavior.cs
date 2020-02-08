@@ -10,6 +10,8 @@ public class BulletBehavior : MonoBehaviour
     float speed = 10f;
     [SerializeField]
     float damage = 50;
+
+    float lifeTime = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,12 @@ public class BulletBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(transform.up * speed * Time.deltaTime);
+        transform.Translate(transform.up * speed * Time.deltaTime,Space.World);
+        lifeTime -= Time.deltaTime;
+        if(lifeTime <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
