@@ -24,7 +24,7 @@ public class Moon : MonoBehaviour
 
     private void Start()
     {
-        
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<WerewolfStateController>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +39,7 @@ public class Moon : MonoBehaviour
                 FadeOutMoonShine();
 
                 // SET NEW WOLF STATE
+                controller.ChangeMoonLight(false);
             }
         }
     }
@@ -55,6 +56,7 @@ public class Moon : MonoBehaviour
                 FadeInMoonShine();
 
                 // SET NEW WOLF STATE
+                controller.ChangeMoonLight(true);
             }
         }
 
