@@ -10,24 +10,26 @@ public class ParallaxEffect1 : MonoBehaviour
 
     Transform cameraTransform;
     Vector3 ownStartPosition;
+    Vector3 offset;
 
-    // Start is called before the first frame update
     void Start()
     {
         cameraTransform = Camera.main.transform;
         ownStartPosition = transform.position;
+        offset = transform.position - Camera.main.transform.position;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+
+    void LateUpdate()
     {
         if (staticBackground)
         {
-            transform.position = new Vector3(cameraTransform.position.x, ownStartPosition.y, ownStartPosition.z);
+            transform.position = new Vector3(cameraTransform.position.x, cameraTransform.position.y, ownStartPosition.z);
         }
         else
         {
-            transform.position = new Vector3(cameraTransform.position.x / scrollingFactor, cameraTransform.position.y / scrollingFactor, ownStartPosition.z);
+            transform.position = new Vector3(cameraTransform.position.x / scrollingFactor, cameraTransform.position.y / scrollingFactor, ownStartPosition.z) + offset;
+
 
         }
     }
