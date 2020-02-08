@@ -11,9 +11,12 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField]
     float damage = 50;
 
+<<<<<<< HEAD
     float lifeTime = 10;
+=======
     private AudioSource audioSource;
 
+>>>>>>> 74ebbfd94081c2fcdefebcb27bde617ebb22a628
     // Start is called before the first frame update
     void Start()
     {
