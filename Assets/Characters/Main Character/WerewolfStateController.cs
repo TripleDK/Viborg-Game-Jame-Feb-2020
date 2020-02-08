@@ -66,6 +66,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
+        Debug.Log("exited " + collider.gameObject.name);
         if (collider.gameObject.tag == "Light")
         {
             touchingLight = false;
