@@ -5,6 +5,8 @@ namespace UnityStandardAssets._2D
 {
     public class PlatformerCharacter2D : MonoBehaviour
     {
+        private AudioSource audioSource;
+
         public float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         public float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] public float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -30,6 +32,7 @@ namespace UnityStandardAssets._2D
             m_Anim = transform.Find("Graphics").GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             wolfStateController = GetComponent<WerewolfStateController>();
+            audioSource = GetComponent<AudioSource>();
         }
 
 
@@ -118,6 +121,7 @@ namespace UnityStandardAssets._2D
         {
             if (wolfStateController.wolfForm)
             {
+                audioSource.Play();
                 Debug.Log("Rawr!");
                 Collider2D[] hitTargets = Physics2D.OverlapCircleAll(transform.position, m_AttackRange);
                 foreach (Collider2D target in hitTargets)
