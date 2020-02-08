@@ -32,7 +32,6 @@ public class DetectBehavior : MonoBehaviour
         if (collider.tag == "Player")
         {
             RaycastHit2D detectCheck = Physics2D.Raycast(transform.position, collider.transform.position - transform.position, detectRange);
-            Debug.Log("Detection hits " + collider.gameObject.name);
             if (collider.gameObject.tag == "Player")
             {
 

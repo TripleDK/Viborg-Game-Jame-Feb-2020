@@ -80,6 +80,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void CheckTransformation()
     {
+        Debug.Log("Touching shadow?" + touchingShadow + " touching light? " + touchingLight + " moonlight? " + moonlight);
         if (touchingShadow && !touchingLight)
             TransformToHuman();
         else
@@ -96,6 +97,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void TransformToWolf()
     {
+        Debug.Log("I am wolf");
         wolfForm = true;
         playerController.m_MaxSpeed = wolfSpeed;
         playerController.m_JumpForce = wolfJump;
@@ -105,6 +107,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void TransformToHuman()
     {
+        Debug.Log("I am man");
         wolfForm = false;
         playerController.m_MaxSpeed = humanSpeed;
         playerController.m_JumpForce = humanJump;

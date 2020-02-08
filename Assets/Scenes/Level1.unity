@@ -18781,6 +18781,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2041748641}
     m_Modifications:
+    - target: {fileID: 100002, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 3}
+      propertyPath: m_Name
+      value: f
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -32773,6 +32777,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StandardEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241650363182527013, guid: bcb97ffe80c610246892067a4d646d5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075482392575821708, guid: bcb97ffe80c610246892067a4d646d5e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb97ffe80c610246892067a4d646d5e, type: 3}

@@ -19,7 +19,6 @@ public class EnemyStationaryPatrolState : EnemyState
 
     public override void StateExecute()
     {
-        Debug.Log("It's boring out here");
         lastTurn -= Time.deltaTime;
         if (lastTurn <= 0)
         {
