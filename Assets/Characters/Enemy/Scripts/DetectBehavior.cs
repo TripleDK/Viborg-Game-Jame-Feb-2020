@@ -12,6 +12,7 @@ public class DetectBehavior : MonoBehaviour
     private Collider2D detectCollider;
     private Collider2D enemyCollider;
     private EnemyStateController stateController;
+    private bool seeingEnemy = false;
 
     void Start()
     {
@@ -19,6 +20,11 @@ public class DetectBehavior : MonoBehaviour
         detectCollider = GetComponent<Collider2D>();
         enemyCollider = transform.parent.GetComponent<Collider2D>();
         Physics2D.IgnoreCollision(detectCollider, enemyCollider);
+    }
+
+    void SpottedEnemy()
+    {
+        //Hey, Tony!
     }
 
     void OnTriggerStay2D(Collider2D collider)
@@ -29,9 +35,34 @@ public class DetectBehavior : MonoBehaviour
             Debug.Log("Detection hits " + collider.gameObject.name);
             if (collider.gameObject.tag == "Player")
             {
-                stateController.detectedPlayer = collider.gameObject;
-                stateController.GoToAttackState();
+
+                WerewolfStateController wolfController = collider.gameObject.GetComponent<WerewolfStateController>();
+                if (wolfController.wolfForm)
+                {
+
+                    stateController.detectedPlayer = collider.gameObject;
+
+                    stateController.GoToAttackState();
+                }
+                else
+                {
+                    if (seeingEnemy == false)
+                    {
+                        seeingEnemy = true;
+                        SpottedEnemy();
+                    }
+                }
+            }
+            else
+            {
+                seeingEnemy = false;
             }
         }
+        else
+        {
+            seeingEnemy = false;
+        }
+
     }
+
 }
