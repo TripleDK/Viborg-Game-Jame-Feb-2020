@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 11400002}
   - component: {fileID: 11400000}
   - component: {fileID: 6100000}
+  - component: {fileID: 920846920}
   m_Layer: 0
   m_Name: CharacterRobotBoy
   m_TagString: Player
@@ -162,6 +163,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.68}
   m_EdgeRadius: 0
+--- !u!114 &920846920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef59444adb616743af1207b0f770b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wolfForm: 1
+  humanSpeed: 3
+  humanJump: 0
+  humanStrength: 0
+  humanAnimator: {fileID: 9100000, guid: 8f029ef7b52213442b052bfe962c2712, type: 2}
+  wolfSpeed: 10
+  wolfJump: 800
+  wolfStrength: 0
+  wolfAnimator: {fileID: 9100000, guid: c2fa10cb47dcd024693f6461c8bdd678, type: 2}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 1523459445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.22660388, y: 0.22660388, z: 0.22660388}
+  m_LocalScale: {x: -0.1267259, y: 0.12672591, z: 0.12672591}
   m_Children: []
   m_Father: {fileID: 400002}
   m_RootOrder: 2
@@ -282,7 +304,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523459445}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5fc43f0c4b413534ba12c51c0e5e5f6f, type: 2}
   m_CullingMode: 0
