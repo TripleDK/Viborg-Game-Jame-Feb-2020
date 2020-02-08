@@ -20,8 +20,10 @@ public class DetectBehavior : MonoBehaviour
     public class Sound
     {
         public AudioClip soundFile;
+        [Range(0f, 1f)]
         public float volume;
     }
+
     public Sound[] italianGuy;
 
     void Start()
@@ -35,14 +37,10 @@ public class DetectBehavior : MonoBehaviour
 
     public void ItalianSpeaks()
     {
-        TriggerSoundEvent(italianGuy);
-        Debug.Log("hey tony");
-    }
-
-    private void TriggerSoundEvent(Sound[] sound)
-    {
-        selectedFile = Random.Range(0, sound.Length);
-        audioSource.clip = sound[selectedFile].soundFile;
+        selectedFile = Random.Range(0, italianGuy.Length);
+        audioSource.clip = italianGuy[selectedFile].soundFile;
+        audioSource.pitch = 1.3f;
+        audioSource.volume = italianGuy[selectedFile].volume;
         audioSource.Play();
     }
 
