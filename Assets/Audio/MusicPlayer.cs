@@ -49,6 +49,7 @@ public class MusicPlayer : MonoBehaviour
             fakeWolfForm = true;
         }
 
+        //Debug.Log(wolfForm);
         //switch(wolfForm)
         //{
         //    case false:
