@@ -25,6 +25,7 @@ public class Moon : MonoBehaviour
     private void Start()
     {
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<WerewolfStateController>();
+        controller.ChangeMoonLight(true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
