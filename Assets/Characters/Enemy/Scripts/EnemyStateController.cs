@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyStateController : MonoBehaviour
 {
     public GameObject bullet;
+    public GameObject key;
     [HideInInspector]
     public EnemyState currentState;
     [HideInInspector]
@@ -43,6 +44,10 @@ public class EnemyStateController : MonoBehaviour
 
     public void Die()
     {
+        if(key != null)
+        {
+            GameObject.Instantiate(key, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);    
     }
 
