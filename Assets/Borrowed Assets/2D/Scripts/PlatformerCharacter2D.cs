@@ -29,7 +29,7 @@ namespace UnityStandardAssets._2D
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
             m_CeilingCheck = transform.Find("CeilingCheck");
-            m_Anim = transform.Find("Graphics").GetComponent<Animator>();
+            m_Anim = transform.Find("Graphics").Find("Wolf").GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             wolfStateController = GetComponent<WerewolfStateController>();
             audioSource = GetComponent<AudioSource>();

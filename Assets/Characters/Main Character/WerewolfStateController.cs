@@ -19,7 +19,7 @@ public class WerewolfStateController : MonoBehaviour
     [SerializeField]
     private float humanJump;
     [SerializeField]
-    private float humanStrength;
+    private float humanMass;
     [SerializeField]
     private AnimatorController humanAnimator;
 
@@ -29,7 +29,7 @@ public class WerewolfStateController : MonoBehaviour
     [SerializeField]
     private float wolfJump;
     [SerializeField]
-    private float wolfStrength;
+    private float wolfMass;
     [SerializeField]
     private AnimatorController wolfAnimator;
 
@@ -42,7 +42,7 @@ public class WerewolfStateController : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlatformerCharacter2D>();
-        anim = transform.Find("Graphics").GetComponent<Animator>();
+        anim = transform.Find("Graphics").Find("Wolf").GetComponent<Animator>();
 
 
         if (wolfForm) TransformToWolf();
@@ -66,6 +66,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
+        Debug.Log("exited " + collider.gameObject.name);
         if (collider.gameObject.tag == "Light")
         {
             touchingLight = false;
@@ -80,6 +81,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void CheckTransformation()
     {
+        Debug.Log("Touching shadow?" + touchingShadow + " touching light? " + touchingLight + " moonlight? " + moonlight);
         if (touchingShadow && !touchingLight)
             TransformToHuman();
         else
@@ -96,6 +98,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void TransformToWolf()
     {
+        Debug.Log("I am wolf");
         wolfForm = true;
         playerController.m_MaxSpeed = wolfSpeed;
         playerController.m_JumpForce = wolfJump;
@@ -105,6 +108,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void TransformToHuman()
     {
+        Debug.Log("I am man");
         wolfForm = false;
         playerController.m_MaxSpeed = humanSpeed;
         playerController.m_JumpForce = humanJump;
