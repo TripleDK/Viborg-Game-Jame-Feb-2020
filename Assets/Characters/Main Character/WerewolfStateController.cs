@@ -19,7 +19,7 @@ public class WerewolfStateController : MonoBehaviour
     [SerializeField]
     private float humanJump;
     [SerializeField]
-    private float humanStrength;
+    private float humanMass;
     [SerializeField]
     private AnimatorController humanAnimator;
 
@@ -29,7 +29,7 @@ public class WerewolfStateController : MonoBehaviour
     [SerializeField]
     private float wolfJump;
     [SerializeField]
-    private float wolfStrength;
+    private float wolfMass;
     [SerializeField]
     private AnimatorController wolfAnimator;
 
@@ -42,7 +42,7 @@ public class WerewolfStateController : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlatformerCharacter2D>();
-        anim = transform.Find("Graphics").GetComponent<Animator>();
+        anim = transform.Find("Graphics").Find("Wolf").GetComponent<Animator>();
 
 
         if (wolfForm) TransformToWolf();
