@@ -5,10 +5,13 @@ using UnityStandardAssets;
 using UnityStandardAssets._2D;
 using UnityEngine.UI;
 using UnityEditor.Animations;
+using UnityEngine.SceneManagement;
 
 public class WerewolfStateController : MonoBehaviour
 {
     public bool wolfForm = false;
+    [SerializeField]
+    float health = 100;
 
     [Header("Human stats")]
     [SerializeField]
@@ -90,5 +93,19 @@ public class WerewolfStateController : MonoBehaviour
         playerController.m_MaxSpeed = humanSpeed;
         playerController.m_JumpForce = humanJump;
         anim.runtimeAnimatorController = humanAnimator;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

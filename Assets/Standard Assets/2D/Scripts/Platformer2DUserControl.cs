@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityStandardAssets;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets._2D
