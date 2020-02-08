@@ -37,6 +37,7 @@ public class WerewolfStateController : MonoBehaviour
     private Animator anim;
     private bool touchingShadow = false;
     private bool touchingLight = false;
+    private bool moonlight = false;
 
     void Start()
     {
@@ -68,14 +69,29 @@ public class WerewolfStateController : MonoBehaviour
         if (collider.gameObject.tag == "Light")
         {
             touchingLight = false;
-            if (touchingShadow)
-                TransformToHuman();
+            CheckTransformation();
         }
         else if (collider.gameObject.tag == "Shadow")
         {
             touchingShadow = false;
-            TransformToWolf();
+            CheckTransformation();
         }
+    }
+
+    void CheckTransformation()
+    {
+        if (touchingShadow && !touchingLight)
+            TransformToHuman();
+        else
+        {
+            if (!touchingShadow && moonlight)
+                TransformToWolf();
+        }
+    }
+    public void ChangeMoonLight(bool moonLightOn)
+    {
+        moonlight = moonLightOn;
+        CheckTransformation();
     }
 
     void TransformToWolf()

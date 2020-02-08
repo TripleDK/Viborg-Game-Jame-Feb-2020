@@ -43,7 +43,7 @@ public class EnemyStateController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        Destroy(gameObject);    
     }
 
     // Start is called before the first frame update
