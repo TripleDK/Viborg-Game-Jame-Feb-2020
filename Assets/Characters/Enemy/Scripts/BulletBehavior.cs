@@ -10,10 +10,14 @@ public class BulletBehavior : MonoBehaviour
     float speed = 10f;
     [SerializeField]
     float damage = 50;
+
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-
+		audioSource = GetComponent<AudioSource>();
+		audioSource.Play();
     }
 
     // Update is called once per frame
