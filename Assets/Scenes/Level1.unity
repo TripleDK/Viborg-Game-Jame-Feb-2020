@@ -33411,26 +33411,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2766661147727916145, guid: bcb97ffe80c610246892067a4d646d5e,
-        type: 3}
-      propertyPath: key
-      value: 
-      objectReference: {fileID: 7350111733552212411, guid: f9937fbea886a924fa3eb25e68610a9a,
-        type: 3}
     - target: {fileID: 2912327952524281192, guid: bcb97ffe80c610246892067a4d646d5e,
         type: 3}
       propertyPath: m_Name
       value: StandardEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5241650363182527013, guid: bcb97ffe80c610246892067a4d646d5e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9075482392575821708, guid: bcb97ffe80c610246892067a4d646d5e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb97ffe80c610246892067a4d646d5e, type: 3}
