@@ -33,7 +33,7 @@ public class WerewolfStateController : MonoBehaviour
     private PlatformerCharacter2D playerController;
     private Animator anim;
     private bool touchingShadow = false;
-    private bool touchingLight = false; 
+    private bool touchingLight = false;
 
     void Start()
     {
@@ -55,7 +55,8 @@ public class WerewolfStateController : MonoBehaviour
         else if (collider.gameObject.tag == "Shadow")
         {
             touchingShadow = true;
-            TransformToHuman();
+            if (!touchingLight)
+                TransformToHuman();
         }
     }
 
@@ -64,11 +65,13 @@ public class WerewolfStateController : MonoBehaviour
         if (collider.gameObject.tag == "Light")
         {
             touchingLight = false;
-         }
+            if (touchingShadow)
+                TransformToHuman();
+        }
         else if (collider.gameObject.tag == "Shadow")
         {
             touchingShadow = false;
-            TransformToHuman();
+            TransformToWolf();
         }
     }
 
@@ -79,7 +82,7 @@ public class WerewolfStateController : MonoBehaviour
         playerController.m_JumpForce = wolfJump;
         anim.runtimeAnimatorController = wolfAnimator;
     }
-    
+
 
     void TransformToHuman()
     {
