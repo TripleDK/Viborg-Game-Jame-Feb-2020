@@ -5,10 +5,13 @@ using UnityStandardAssets;
 using UnityStandardAssets._2D;
 using UnityEngine.UI;
 using UnityEditor.Animations;
+using UnityEngine.SceneManagement;
 
 public class WerewolfStateController : MonoBehaviour
 {
     public bool wolfForm = false;
+    [SerializeField]
+    float health = 100;
 
     [Header("Human stats")]
     [SerializeField]
@@ -34,6 +37,7 @@ public class WerewolfStateController : MonoBehaviour
     private Animator anim;
     private bool touchingShadow = false;
     private bool touchingLight = false;
+    private bool moonlight = false;
 
     void Start()
     {
@@ -65,14 +69,29 @@ public class WerewolfStateController : MonoBehaviour
         if (collider.gameObject.tag == "Light")
         {
             touchingLight = false;
-            if (touchingShadow)
-                TransformToHuman();
+            CheckTransformation();
         }
         else if (collider.gameObject.tag == "Shadow")
         {
             touchingShadow = false;
-            TransformToWolf();
+            CheckTransformation();
         }
+    }
+
+    void CheckTransformation()
+    {
+        if (touchingShadow && !touchingLight)
+            TransformToHuman();
+        else
+        {
+            if (!touchingShadow && moonlight)
+                TransformToWolf();
+        }
+    }
+    public void ChangeMoonLight(bool moonLightOn)
+    {
+        moonlight = moonLightOn;
+        CheckTransformation();
     }
 
     void TransformToWolf()
@@ -90,5 +109,19 @@ public class WerewolfStateController : MonoBehaviour
         playerController.m_MaxSpeed = humanSpeed;
         playerController.m_JumpForce = humanJump;
         anim.runtimeAnimatorController = humanAnimator;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
