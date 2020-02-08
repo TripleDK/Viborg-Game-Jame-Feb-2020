@@ -21,7 +21,7 @@ public class WerewolfStateController : MonoBehaviour
     [SerializeField]
     private float humanMass;
     [SerializeField]
-    private AnimatorController humanAnimator;
+    private GameObject humanGraphics;
 
     [Header("Wolf stats")]
     [SerializeField]
@@ -31,20 +31,18 @@ public class WerewolfStateController : MonoBehaviour
     [SerializeField]
     private float wolfMass;
     [SerializeField]
-    private AnimatorController wolfAnimator;
+    private GameObject wolfGraphics;
 
     private PlatformerCharacter2D playerController;
-    private Animator anim;
     private bool touchingShadow = false;
     private bool touchingLight = false;
     private bool moonlight = false;
+   
 
     void Start()
     {
         playerController = GetComponent<PlatformerCharacter2D>();
-        anim = transform.Find("Graphics").Find("Wolf").GetComponent<Animator>();
-
-
+       
         if (wolfForm) TransformToWolf();
         else TransformToHuman();
     }
@@ -102,7 +100,8 @@ public class WerewolfStateController : MonoBehaviour
         wolfForm = true;
         playerController.m_MaxSpeed = wolfSpeed;
         playerController.m_JumpForce = wolfJump;
-        anim.runtimeAnimatorController = wolfAnimator;
+        wolfGraphics.SetActive(true);
+        humanGraphics.SetActive(false);
     }
 
 
@@ -112,7 +111,9 @@ public class WerewolfStateController : MonoBehaviour
         wolfForm = false;
         playerController.m_MaxSpeed = humanSpeed;
         playerController.m_JumpForce = humanJump;
-        anim.runtimeAnimatorController = humanAnimator;
+        wolfGraphics.SetActive(false);
+        humanGraphics.SetActive(true);
+
     }
 
     public void TakeDamage(float damage)
