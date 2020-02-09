@@ -128,6 +128,7 @@ namespace UnityStandardAssets._2D
             if (wolfStateController.wolfForm)
             {
                 audioSource.Play();
+                m_WolfAnim.SetTrigger("Attack");
                Collider2D[] hitTargets = Physics2D.OverlapCircleAll(transform.position, m_AttackRange);
                 foreach (Collider2D target in hitTargets)
                 {
