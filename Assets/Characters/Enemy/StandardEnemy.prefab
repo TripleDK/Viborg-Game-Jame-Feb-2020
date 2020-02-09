@@ -240,6 +240,8 @@ MonoBehaviour:
   key: {fileID: 7350111733552212411, guid: f9937fbea886a924fa3eb25e68610a9a, type: 3}
   detectedPlayer: {fileID: 0}
   timeBetweenPatrolTurn: 5
+  timePatrolling: 3
+  movementSpeed: 0
   reactionTime: 1
   timeBetweenAttacks: 3
 --- !u!61 &1105731710938255383
@@ -375,6 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7086057586109618511}
   - component: {fileID: 9075482392575821708}
+  - component: {fileID: 3674986877189142430}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -446,3 +449,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3674986877189142430
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241650363182527013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
