@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityStandardAssets._2D
@@ -24,7 +25,7 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
         private WerewolfStateController wolfStateController;
-
+        private List<Interactable> nearbyInteractables = new List<Interactable>();
         private void Awake()
         {
             // Setting up references.
@@ -127,8 +128,7 @@ namespace UnityStandardAssets._2D
             if (wolfStateController.wolfForm)
             {
                 audioSource.Play();
-                Debug.Log("Rawr!");
-                Collider2D[] hitTargets = Physics2D.OverlapCircleAll(transform.position, m_AttackRange);
+               Collider2D[] hitTargets = Physics2D.OverlapCircleAll(transform.position, m_AttackRange);
                 foreach (Collider2D target in hitTargets)
                 {
                     Debug.Log("Got you? " + target.gameObject.name);
@@ -151,6 +151,37 @@ namespace UnityStandardAssets._2D
 
                     }
                 }
+            }
+        }
+
+        public void Interact()
+        {
+            if (wolfStateController.wolfForm)
+                Attack();
+            else
+            {
+                foreach (Interactable interactable in nearbyInteractables)
+                {
+                    interactable.Interact();
+                }
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Interactable interactable = collision.GetComponent<Interactable>();
+            if (interactable != null)
+            {
+                nearbyInteractables.Add(interactable);
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            Interactable interactable = collision.GetComponent<Interactable>();
+            if (interactable != null)
+            {
+                nearbyInteractables.Remove(interactable);
             }
         }
 

@@ -57,6 +57,8 @@ public class DetectBehavior : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
+            Debug.Log("Enemy can see player");
+
             RaycastHit2D[] detectChecks = Physics2D.RaycastAll(enemyCollider.transform.position, (Vector2)collider.transform.position - (Vector2)enemyCollider.transform.position, detectRange);
 
             bool canSeePlayer = false;
