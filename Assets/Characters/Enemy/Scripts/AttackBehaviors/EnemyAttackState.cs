@@ -9,7 +9,8 @@ public class EnemyAttackState : EnemyState
     GameObject enemy;
     GameObject player;
     EnemyStateController stateController;
-    public EnemyAttackState(GameObject enemy) { this.enemy = enemy; }
+    Animator anim;
+    public EnemyAttackState(GameObject enemy) { this.enemy = enemy; anim = enemy.transform.Find("Graphics").GetComponent<Animator>(); }
 
     public override void StateEnter()
     {
@@ -40,7 +41,7 @@ public class EnemyAttackState : EnemyState
     {
         Debug.Log("Firing!");
         GameObject firedBullet = GameObject.Instantiate(bullet, enemy.transform.position, Quaternion.identity);
-        
+        anim.SetTrigger("Fire");
         firedBullet.transform.up = player.transform.position - enemy.transform.position;
         firedBullet.transform.eulerAngles = new Vector3(firedBullet.transform.eulerAngles.x, 0, firedBullet.transform.eulerAngles.z);
     }

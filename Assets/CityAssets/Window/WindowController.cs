@@ -22,8 +22,8 @@ public class WindowController : Interactable
 
     public override void Interact()
     {
-        roomLight.SetActive(!roomLight.activeSelf);
         renderer.sprite = roomLight.activeSelf ? openWindows : closedWindows;
+        roomLight.SetActive(!roomLight.activeSelf);
     }
 
 }

@@ -6,10 +6,21 @@ using UnityEngine.SceneManagement;
 public class ExitBehavior : MonoBehaviour
 {
     bool unlocked = false;
+    [SerializeField]
+    Sprite closedCoor;
+    [SerializeField]
+    Sprite openDoor;
+    SpriteRenderer renderer;
+
+    private void Start()
+    {
+        renderer = transform.Find("Graphics").GetComponent<SpriteRenderer>();
+    }
     public void Unlock()
     {
         Debug.Log("The door is now unlocked!");
         unlocked = true;
+        renderer.sprite = openDoor;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
