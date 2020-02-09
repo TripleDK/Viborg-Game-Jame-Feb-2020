@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KeyBehavior : MonoBehaviour
 {
+    AudioSource audioSource;
     [SerializeField]
     float floatRange = 1;
     [SerializeField]
@@ -14,6 +15,7 @@ public class KeyBehavior : MonoBehaviour
     Collider2D coll;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         startY = transform.position.y;
         coll = GetComponent<Collider2D>();
         renderer = transform.Find("Graphics").GetComponent<SpriteRenderer>();
@@ -30,7 +32,7 @@ public class KeyBehavior : MonoBehaviour
 
     IEnumerator PickUp()
     {
-        ///ESBEN: HER SAMLER VI NØGLEN OP
+        audioSource.Play();
         GameObject.FindGameObjectWithTag("LevelExit").GetComponent<ExitBehavior>().Unlock();
         coll.enabled = false;
         renderer.enabled = false;
