@@ -65,7 +65,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
-     //   Debug.Log("exited " + collider.gameObject.name);
+        //   Debug.Log("exited " + collider.gameObject.name);
         if (collider.gameObject.tag == "Light")
         {
             touchingLight = false;
@@ -80,9 +80,13 @@ public class WerewolfStateController : MonoBehaviour
 
     void CheckTransformation()
     {
-  //      Debug.Log("Touching shadow?" + touchingShadow + " touching light? " + touchingLight + " moonlight? " + moonlight);
+        Debug.Log("Touching shadow?" + touchingShadow + " touching light? " + touchingLight + " moonlight? " + moonlight);
         if (touchingShadow && !touchingLight)
             TransformToHuman();
+        else if (!moonlight)
+        {
+            TransformToHuman();
+        }
         else
         {
             if (!touchingShadow && moonlight)
@@ -97,7 +101,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void TransformToWolf()
     {
-       // Debug.Log("I am wolf");
+        // Debug.Log("I am wolf");
         wolfForm = true;
         playerController.m_MaxSpeed = wolfSpeed;
         playerController.m_JumpForce = wolfJump;
@@ -108,7 +112,7 @@ public class WerewolfStateController : MonoBehaviour
 
     void TransformToHuman()
     {
-      //  Debug.Log("I am man");
+        //  Debug.Log("I am man");
         wolfForm = false;
         playerController.m_MaxSpeed = humanSpeed;
         playerController.m_JumpForce = humanJump;
