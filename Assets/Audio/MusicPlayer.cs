@@ -56,14 +56,20 @@ public class MusicPlayer : MonoBehaviour
             fakeWolfForm = true;
         }
 
-        //Debug.Log(wolfForm);
-        //switch(wolfForm)
+        Debug.Log(wolfForm);
+        //switch (wolfForm)
         //{
         //    case false:
-        //        human.TransitionTo(1f);
+        //        if (fakeWolfFormHasChanged == false)
+        //        {
+        //            TransitionToHuman();
+        //        }
         //        break;
         //    case true:
-        //        werewolf.TransitionTo(1f);
+        //        if (fakeWolfFormHasChanged == true)
+        //        {
+        //            TransitionToWerewolf();
+        //        }
         //        break;
         //}
 
@@ -72,21 +78,31 @@ public class MusicPlayer : MonoBehaviour
             case false:
                 if (fakeWolfFormHasChanged == false)
                 {
-                    audioSource.clip = transitionToHuman;
-                    audioSource.Play();
-                    human.TransitionTo(tTimeHuman);
-                    fakeWolfFormHasChanged = true;
+                    TransitionToHuman();
                 }
                 break;
             case true:
                 if (fakeWolfFormHasChanged == true)
                 {
-                    audioSource.clip = transitionToWolf;
-                    audioSource.Play();
-                    werewolf.TransitionTo(tTimeWerewolf);
-                    fakeWolfFormHasChanged = false;
+                    TransitionToWerewolf();
                 }
                 break;
         }
+    }
+
+    private void TransitionToWerewolf()
+    {
+        audioSource.clip = transitionToWolf;
+        audioSource.Play();
+        werewolf.TransitionTo(tTimeWerewolf);
+        fakeWolfFormHasChanged = false;
+    }
+
+    private void TransitionToHuman()
+    {
+        audioSource.clip = transitionToHuman;
+        audioSource.Play();
+        human.TransitionTo(tTimeHuman);
+        fakeWolfFormHasChanged = true;
     }
 }
