@@ -53,6 +53,9 @@ MonoBehaviour:
   werewolf: {fileID: -4975230460224911807, guid: 3f0839fb709d54adcb618361ac792cb0,
     type: 2}
   human: {fileID: 24500006, guid: 3f0839fb709d54adcb618361ac792cb0, type: 2}
+  SfxStarting: {fileID: 24500006, guid: aa9d690d9ca4a483c96fb458ad67bc6a, type: 2}
+  SfxRunning: {fileID: -7972425495861561843, guid: aa9d690d9ca4a483c96fb458ad67bc6a,
+    type: 2}
   transitionToHuman: {fileID: 8300000, guid: e93b34958579d4e3f9d6445d8355fc3e, type: 3}
   transitionToWolf: {fileID: 8300000, guid: f7b08263a1a644e03bc87e59353f05c4, type: 3}
 --- !u!82 &7817988040785981912
@@ -194,7 +197,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4424425612998707260, guid: 3f0839fb709d54adcb618361ac792cb0,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: f5821c2d79de3450c93bc7d0a0d7a354, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 24a98985ff73782459585cdf760406a7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -322,7 +325,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3560675605213229831, guid: 3f0839fb709d54adcb618361ac792cb0,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3fb8a42c7f3d643db89b08259f1cf4bc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: faf516a2cc699f044b42a2494b344422, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -450,7 +453,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1081093554236572889, guid: 3f0839fb709d54adcb618361ac792cb0,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 466f11e0787bb45c7a4bef3fd3942754, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3012937e306b4d84e9ba96a14cfd03ec, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

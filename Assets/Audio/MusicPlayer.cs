@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class MusicPlayer : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class MusicPlayer : MonoBehaviour
 
     public WerewolfStateController mainCharacter;
     private bool wolfForm;
-    private bool fakeWolfForm;
-    private bool fakeWolfFormHasChanged;
+    private bool wolfFormLastFrame;
+    private float timeForIntroduction = 0f;
 
     public AudioMixerSnapshot werewolf;
     public AudioMixerSnapshot human;
@@ -24,8 +25,20 @@ public class MusicPlayer : MonoBehaviour
     public AudioClip transitionToWolf;
     private AudioSource audioSource;
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode load)
+    {
+        mainCharacter = GameObject.FindWithTag("Player").GetComponent<WerewolfStateController>();
+    }
+
     private void Awake()
     {
+        mainCharacter = GameObject.FindWithTag("Player").GetComponent<WerewolfStateController>();
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        if (musicIsPlaying == true)
+        {
+            Destroy(gameObject);
+        }
         audioSource = GetComponent<AudioSource>();
 
         if (musicIsPlaying == false)
@@ -36,8 +49,6 @@ public class MusicPlayer : MonoBehaviour
             DontDestroyOnLoad(transform.gameObject);
             musicIsPlaying = true;
         }
-
-        wolfForm = mainCharacter.wolfForm;
     }
 
     private void Start()
@@ -47,55 +58,24 @@ public class MusicPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            fakeWolfForm = false;
-        }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            fakeWolfForm = true;
-        }
+        wolfForm = mainCharacter.wolfForm;
 
-        Debug.Log(wolfForm);
-        //switch (wolfForm)
-        //{
-        //    case false:
-        //        if (fakeWolfFormHasChanged == false)
-        //        {
-        //            TransitionToHuman();
-        //        }
-        //        break;
-        //    case true:
-        //        if (fakeWolfFormHasChanged == true)
-        //        {
-        //            TransitionToWerewolf();
-        //        }
-        //        break;
-        //}
-
-        switch (fakeWolfForm)
+        if (Time.time > timeForIntroduction)
         {
-            case false:
-                if (fakeWolfFormHasChanged == false)
+            if (wolfForm != wolfFormLastFrame)
+            {
+                switch (wolfForm)
                 {
-                    TransitionToHuman();
+                    case false:
+                        TransitionToHuman();
+                        break;
+                    case true:
+                        TransitionToWerewolf();
+                        break;
                 }
-                break;
-            case true:
-                if (fakeWolfFormHasChanged == true)
-                {
-                    TransitionToWerewolf();
-                }
-                break;
+                wolfFormLastFrame = wolfForm;
+            }
         }
-    }
-
-    private void TransitionToWerewolf()
-    {
-        audioSource.clip = transitionToWolf;
-        audioSource.Play();
-        werewolf.TransitionTo(tTimeWerewolf);
-        fakeWolfFormHasChanged = false;
     }
 
     private void TransitionToHuman()
@@ -103,6 +83,12 @@ public class MusicPlayer : MonoBehaviour
         audioSource.clip = transitionToHuman;
         audioSource.Play();
         human.TransitionTo(tTimeHuman);
-        fakeWolfFormHasChanged = true;
+    }
+
+    private void TransitionToWerewolf()
+    {
+        audioSource.clip = transitionToWolf;
+        audioSource.Play();
+        werewolf.TransitionTo(tTimeWerewolf);
     }
 }
