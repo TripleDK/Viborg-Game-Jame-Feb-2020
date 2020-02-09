@@ -39,7 +39,7 @@ namespace UnityStandardAssets._2D
             m_Jump = false;
             bool attack = Input.GetKeyDown(KeyCode.Space);
             if (attack)
-                m_Character.Attack();
+                m_Character.Interact();
         }
     }
 }
