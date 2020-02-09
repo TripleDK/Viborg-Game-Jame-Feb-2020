@@ -58,10 +58,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 7.08, y: 3.64}
+    - - {x: 7.08, y: 2.32}
       - {x: 0.5973549, y: 1.12}
       - {x: 0.4309063, y: -1.92}
-      - {x: 7.066676, y: -3.89}
+      - {x: 7.066676, y: -1.79}
 --- !u!114 &1707544796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae538ec44d2266e41866a84c8e6a8a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectRange: 2
+  detectRange: 15
   italianGuy:
   - soundFile: {fileID: 8300000, guid: 459d484c0a937421d8bb6860038746fe, type: 3}
     volume: 0.7
@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7397707795980746903, guid: 35f56c1f21a14ad44871b8f674d9e4b7, type: 3}
+  key: {fileID: 7350111733552212411, guid: f9937fbea886a924fa3eb25e68610a9a, type: 3}
   detectedPlayer: {fileID: 0}
   timeBetweenPatrolTurn: 5
   reactionTime: 1

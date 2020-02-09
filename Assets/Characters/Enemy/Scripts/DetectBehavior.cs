@@ -32,7 +32,7 @@ public class DetectBehavior : MonoBehaviour
         stateController = transform.parent.GetComponent<EnemyStateController>();
         detectCollider = GetComponent<Collider2D>();
         enemyCollider = transform.parent.GetComponent<Collider2D>();
-        Physics2D.IgnoreCollision(detectCollider, enemyCollider);
+        Physics2D.IgnoreCollision(detectCollider, enemyCollider, true);
     }
 
     public void ItalianSpeaks()
@@ -57,10 +57,21 @@ public class DetectBehavior : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            RaycastHit2D detectCheck = Physics2D.Raycast(transform.position, collider.transform.position - transform.position, detectRange);
-            if (collider.gameObject.tag == "Player")
+            RaycastHit2D[] detectChecks = Physics2D.RaycastAll(enemyCollider.transform.position, (Vector2)collider.transform.position - (Vector2)enemyCollider.transform.position, detectRange);
+
+            bool canSeePlayer = false;
+
+            foreach (RaycastHit2D check in detectChecks)
             {
-                
+                if (check.collider != null && check.collider.gameObject.tag == "Player")
+                {
+                    canSeePlayer = true;
+                }
+
+
+            }
+            if (canSeePlayer)
+            {
                 WerewolfStateController wolfController = collider.gameObject.GetComponent<WerewolfStateController>();
                 if (wolfController.wolfForm)
                 {
@@ -68,24 +79,19 @@ public class DetectBehavior : MonoBehaviour
                     stateController.detectedPlayer = collider.gameObject;
 
                     stateController.GoToAttackState();
-
-                    SpottedEnemy();
                 }
-                else
-                {
+                if (seeingEnemy == false)
                     SpottedEnemy();
-                }
             }
-            else
-            {
-                seeingEnemy = false;
-            }
-        }
-        else
-        {
-            seeingEnemy = false;
         }
 
     }
 
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.tag == "Player")
+        {
+            seeingEnemy = false;
+        }
+    }
 }
