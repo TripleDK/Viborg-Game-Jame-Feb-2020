@@ -18,6 +18,8 @@ public class EnemyStateController : MonoBehaviour
     [HideInInspector]
     public GameObject detectedPlayer;
 
+    private AudioSource audioSource;
+
     public float timeBetweenPatrolTurn = 5;
     public float reactionTime = 1;
     public float timeBetweenAttacks = 3;
@@ -48,12 +50,14 @@ public class EnemyStateController : MonoBehaviour
         {
             GameObject.Instantiate(key, transform.position, Quaternion.identity);
         }
+        audioSource.Play(); // death sound
         Destroy(gameObject);    
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         if (currentState != null) currentState.StateEnter();
     }
 

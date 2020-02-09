@@ -39,7 +39,7 @@ public class DetectBehavior : MonoBehaviour
     {
         selectedFile = Random.Range(0, italianGuy.Length);
         audioSource.clip = italianGuy[selectedFile].soundFile;
-        audioSource.pitch = 1.3f;
+        audioSource.pitch = 1.2f;
         audioSource.volume = italianGuy[selectedFile].volume;
         audioSource.Play();
     }

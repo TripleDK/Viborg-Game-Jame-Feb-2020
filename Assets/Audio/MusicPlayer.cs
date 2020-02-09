@@ -17,6 +17,8 @@ public class MusicPlayer : MonoBehaviour
 
     public AudioMixerSnapshot werewolf;
     public AudioMixerSnapshot human;
+    public AudioMixerSnapshot SfxStarting;
+    public AudioMixerSnapshot SfxRunning;
 
     public AudioClip transitionToHuman;
     public AudioClip transitionToWolf;
@@ -36,6 +38,11 @@ public class MusicPlayer : MonoBehaviour
         }
 
         wolfForm = mainCharacter.wolfForm;
+    }
+
+    private void Start()
+    {
+        SfxRunning.TransitionTo(1f);
     }
 
     private void Update()
