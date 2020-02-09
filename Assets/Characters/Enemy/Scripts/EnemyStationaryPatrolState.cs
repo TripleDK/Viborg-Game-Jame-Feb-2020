@@ -16,7 +16,7 @@ public class EnemyStationaryPatrolState : EnemyState
     {
         detectCollider = enemy.transform.Find("DetectCollider").GetComponent<Collider2D>();
         stateController = enemy.GetComponent<EnemyStateController>();
-        Debug.Log("Looking for the enemy");
+      //  Debug.Log("Looking for the enemy");
         lastTurn = stateController.timePatrolling;
     }
 
