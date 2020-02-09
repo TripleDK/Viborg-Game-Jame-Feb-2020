@@ -37,7 +37,7 @@ public class KeyBehavior : MonoBehaviour
         coll.enabled = false;
         renderer.enabled = false;
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         Destroy(gameObject);
     }
 
