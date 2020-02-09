@@ -11,21 +11,34 @@ public class KeyBehavior : MonoBehaviour
     float floatSpeed = 1;
 
     float startY;
-
+    SpriteRenderer renderer;
+    Collider2D coll;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         startY = transform.position.y;
+        coll = GetComponent<Collider2D>();
+        renderer = transform.Find("Graphics").GetComponent<SpriteRenderer>();
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Who dares pick up key? " + collision.gameObject.name + " tagged " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
         {
-            audioSource.Play();
-            GameObject.FindGameObjectWithTag("LevelExit").GetComponent<ExitBehavior>().Unlock();
-            Destroy(gameObject);
+            StartCoroutine(PickUp());
         }
+    }
+
+    IEnumerator PickUp()
+    {
+        audioSource.Play();
+        GameObject.FindGameObjectWithTag("LevelExit").GetComponent<ExitBehavior>().Unlock();
+        coll.enabled = false;
+        renderer.enabled = false;
+
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 
     private void Update()

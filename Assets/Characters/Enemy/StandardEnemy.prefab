@@ -58,10 +58,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 7.08, y: 3.64}
+    - - {x: 7.08, y: 2.32}
       - {x: 0.5973549, y: 1.12}
       - {x: 0.4309063, y: -1.92}
-      - {x: 7.066676, y: -3.89}
+      - {x: 7.066676, y: -1.79}
 --- !u!114 &1707544796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae538ec44d2266e41866a84c8e6a8a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectRange: 2
+  detectRange: 15
   italianGuy:
   - soundFile: {fileID: 8300000, guid: 459d484c0a937421d8bb6860038746fe, type: 3}
     volume: 0.7
@@ -240,6 +240,8 @@ MonoBehaviour:
   key: {fileID: 7350111733552212411, guid: f9937fbea886a924fa3eb25e68610a9a, type: 3}
   detectedPlayer: {fileID: 0}
   timeBetweenPatrolTurn: 5
+  timePatrolling: 3
+  movementSpeed: 0
   reactionTime: 1
   timeBetweenAttacks: 3
 --- !u!61 &1105731710938255383
@@ -375,6 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7086057586109618511}
   - component: {fileID: 9075482392575821708}
+  - component: {fileID: 3674986877189142430}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -446,3 +449,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3674986877189142430
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241650363182527013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

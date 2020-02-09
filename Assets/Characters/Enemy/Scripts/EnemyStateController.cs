@@ -21,6 +21,8 @@ public class EnemyStateController : MonoBehaviour
     private AudioSource audioSource;
 
     public float timeBetweenPatrolTurn = 5;
+    public float timePatrolling = 3;
+    public float movementSpeed = 0;
     public float reactionTime = 1;
     public float timeBetweenAttacks = 3;
 
